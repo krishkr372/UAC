@@ -1,7 +1,7 @@
-Install Arduino IDE 
-Install libraries: Adafruit GFX and Adafruit SSD1306 
-Connect the OLED display to the Arduino using I2C (SDA to A4, SCL to A5 for Arduino Uno)
-Upload the following code to the Arduino:
+// Install Arduino IDE 
+// Install libraries: Adafruit GFX and Adafruit SSD1306 
+// Connect the OLED display to the Arduino using I2C (SDA to A4, SCL to A5 for Arduino Uno)
+// Upload the following code to the Arduino in required port.
 
 
 #include <SPI.h>
