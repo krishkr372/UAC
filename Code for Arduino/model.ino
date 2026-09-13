@@ -45,7 +45,7 @@ void loop() {
     if (textLength == 0) {
       // Clear display when an empty string is received (on space erase)
       display.display();
-    } 
+    }
     else {
       // DYNAMIC FONT SCALING: Adjust size so text always stays on line
       if (textLength <= 5) {
