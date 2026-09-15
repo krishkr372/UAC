@@ -19,9 +19,9 @@ except Exception as e:
     arduino = None
 
 # Load model, scaler, and label encoder
-model = joblib.load("asl_model.pkl")
-scaler = joblib.load("asl_scaler.pkl")
-label_encoder = joblib.load("asl_label_encoder.pkl") 
+model = joblib.load("sli_asl_model.pkl")
+scaler = joblib.load("sli_asl_scaler.pkl")
+label_encoder = joblib.load("sli_asl_label_encoder.pkl") 
 
 # Setup MediaPipe
 mp_hands = mp.solutions.hands
