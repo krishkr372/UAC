@@ -8,6 +8,7 @@ Different disabilities
 - Blind
 - Mute
 - Deaf 
+
 Now message are of different forms
 - Speech
 - Sign Languages
