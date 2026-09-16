@@ -1,0 +1,30 @@
+UAC
+│
+├── main.py                  # <-- combines all modules locally
+├── requirements.txt         # <-- Python dependencies list (opencv, mediapipe, pyttsx3, etc.)
+│
+├── trained models/          # <-- trained AI models & parameters
+│                (all pkl files)                        
+├── SLI/                     # <-- MODULE 1: Sign Language Processing (Vision)
+│   └── vision_predictor.py  # <-- Landmark extraction & sign logic
+│
+├── uac_voice/               # <-- MODULE 2: Audio Systems (Speech & Text conversion)
+│   ├── tts.py               # <-- Text-to-Speech (Background Audio Output)
+│   └── stt.py               # <-- Speech-to-Text (Microphone Listener Input)
+│
+├── uac_avatar/              # <-- MODULE 3: Text-to-Sign Animation Layer
+│   ├── __init__.py          
+│   ├── video_dictionary.py  # <-- Prototype: Pulls & plays matching video/GIF frames
+│   └── avatar_api.py        # <-- Production: Connects text strings to a 3D avatar engine
+│
+uac_web/
+│
+├── templates/
+│   ├── index.html        # The homepage where users choose their disability profile
+│   └── meeting.html      # The video call page (like Google Meet) with your translation panels
+│
+├── static/
+│   ├── css/style.css     # Styling for accessible UI (high contrast choices for low-vision users)
+│   └── js/stream.js      # JavaScript handling the live webcam feed using WebRTC
+│
+└── app.py                # The central Python web server backend running Flask

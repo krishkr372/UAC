@@ -22,3 +22,6 @@ Developing a dedicated website where speech, text, and signs can be converted ba
 ## Project Repository
 The full source code, trained model configurations, and documentation are here:
 https://github.com/krishkr372/UAC
+
+
+# How to Use It?
