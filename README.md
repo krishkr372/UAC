@@ -1,6 +1,8 @@
 # UAC-Universal-Accessible-Communication-
 UAC is a system through which people with any type of disabilities can communicate. It will provide a platform where a mute can talk to deaf or blind.  SLI is most important component of this project which convert sign language into english texts. These text then converted to speech and avatars so mute people can communicate to blind, deaf and normal people.
 
+![Sketch of the project](pictures/project2.png)
+
 ## How this system works?
 This will be a website like google meet. Here people can communicate with calls.
 
