@@ -1,7 +1,8 @@
 # Sign Language Interpreter (SLI)
+This is the one of the most important component of the UAC.
 
 ## Introduction & Objective 
-The Sign Language Interpreter (SLI) is a computer-vision-based school project designed to bridge the communication gap between mute individuals and the general public. The main goal is to create a reliable, real-time system that translates hand gestures into text and spoken words instantly, allowing for natural, fluid conversations without requiring the other person to know sign language.
+The Sign Language Interpreter (SLI) is a computer-vision-based school project for the Science Exhibition by Krish Kumar. It is designed to bridge the communication gap between mute individuals and the general public. The main goal is to create a reliable, real-time system that translates hand gestures into text and spoken words instantly, allowing for natural, fluid conversations without requiring the other person to know sign language.
 
 ## How it Works (Methodology)
 The application is built using Python and uses standard webcam feeds to capture gestures:
@@ -25,3 +26,25 @@ https://github.com/krishkr372/UAC
 
 
 # How to Use It?
+
+- Clone the repository to your local machine using:
+
+```bash git clone https://github.com/krishkr372/UAC.git```
+
+- Navigate to the project directory:
+
+```bash cd UAC```
+
+- Open Arduino IDE and upload the provided code to your Arduino board preesent in the Code for Arduino folder inside the project directory.(Optional if you want to use Arduino for additional features)
+
+- Get required libraries and extensions by running the following command in your terminal:
+
+```bash run -r requirements.txt```
+
+- Run the main application using:
+
+```bash python arduinoModel.py```
+
+- Now you can use your webcam to capture hand gestures and see the translated text on the screen. The application will also read out the text using the built-in text-to-speech engine.
+
+- If you have connected the Arduino board, you can also see the translated text on the LCD display connected to the board and if not then only in the desktop.
