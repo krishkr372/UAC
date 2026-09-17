@@ -20,6 +20,7 @@ def bg_speak(tts):
         try:
             engine = pyttsx3.init()
             engine.setProperty('rate', 140)
+            engine.voice = engine.getProperty('voices')[2]  # Use the first available voice
             engine.say(tts)
             engine.runAndWait()
         except Exception as tts_err:
