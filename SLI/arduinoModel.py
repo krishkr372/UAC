@@ -1,3 +1,5 @@
+from tkinter import ttk
+
 import cv2
 import mediapipe as mp
 import joblib
@@ -5,9 +7,26 @@ import numpy as np
 import time
 import warnings
 import serial  
+import pyttsx3
+import threading
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
+# --- Text to speech function ---
+def bg_speak(tts):
+    """Run the speech engine in the background to prevent OpenCV window lag."""
+
+    def worker():
+        try:
+            engine = pyttsx3.init()
+            engine.setProperty('rate', 140)
+            engine.say(tts)
+            engine.runAndWait()
+        except Exception as tts_err:
+            print(f"[TTS] Error in background speecch: {tts_err}")
+    threading.Thread(target=worker, daemon=True).start()
+        
+           
 # --- ARDUINO CONFIGURATION ---
 try:
     print("[OLED] Connecting to Arduino...")
@@ -102,16 +121,26 @@ while True:
                     if time_elapsed >= cooldown_seconds:
                         if pred_char.lower() == "del":
                             spelled_text = spelled_text[:-1]
+                            tts_phase = "Deleted last character."
                         elif pred_char.lower() == "space":
+                            tts_phase = "Clear"
                             spelled_text = "" 
                         else:
                             spelled_text += pred_char
+                            tts_phase = pred_char
                         last_char = pred_char
                         last_added_time = current_time
+
 
                         # --- STEP-BY-STEP TERMINAL MESSAGES ---
                         print(f"[ACTION] Detected Sign: '{pred_char}' | Current Word: '{spelled_text}'")
 
+
+                        # --- STEP-BY-STEP TEXT-TO-SPEECH ---
+                        if tts_phase:
+                            bg_speak(tts_phase)
+
+                            
                         # --- STEP-BY-STEP OLED TRANSMISSION ---
                         if arduino and arduino.is_open:
                             try:
